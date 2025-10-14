@@ -4,7 +4,7 @@ import {Routes, Route} from 'react-router-dom'
 import Products from './pages/Products'
 import Contact from './pages/Contact'
 import About from './pages/About'
-import Navbar from './modules/Navbar/Navbar'
+import Navbar from './components/Navbar'
 
 function App() {
 

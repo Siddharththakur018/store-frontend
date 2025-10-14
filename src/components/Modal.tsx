@@ -1,27 +1,27 @@
-
+import { RxCross2 } from "react-icons/rx";
 
 interface ModalProps {
   isOpen: boolean;
   isClose: () => void;
+  children: React.ReactNode;
 }
 
-const Modal: React.FC<ModalProps> = ({ isOpen, isClose }) => {
-  if (!isOpen) return null; 
+const Modal: React.FC<ModalProps> = ({ isOpen, isClose, children}) => {
+  if (!isOpen) return null;
 
   return (
-    <div 
-      className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center"
-      onClick={isClose} 
-    >
-      <div 
-        className="bg-white w-96 h-64 p-6 rounded shadow-lg"
-        onClick={(e) => e.stopPropagation()} 
+    <div className="fixed inset-0 flex backdrop-blur-sm justify-center items-center">
+      <div
+        className="bg-white w-1/3 h-3/4 p-4 rounded-xl shadow-lg"
+        onClick={(e) => e.stopPropagation()}
       >
-        <h2 className="text-xl font-bold mb-4">Modal Title</h2>
-        <p>This is your modal content.</p>
+        <div onClick={isClose} className="flex cursor-pointer justify-end">
+          <RxCross2 className="text-gray-700"/>
+        </div>
+        {children}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Modal
+export default Modal;

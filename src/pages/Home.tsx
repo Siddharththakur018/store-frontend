@@ -1,17 +1,6 @@
-import { useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
-import Modal from "../components/Modal";
 
 const Home = () => {
-  const [isModal, setIsModal] = useState<boolean>(false);
-
-  const openModal = () => {
-    setIsModal(true);
-  };
-
-  const closeModal = () => {
-    setIsModal(false);
-  };
   return (
     <>
       <div className="flex flex-col items-center justify-center h-screen">
@@ -35,7 +24,6 @@ const Home = () => {
         </div>
         <div className="flex justify-between items-center text-white w-64">
           <button
-            onClick={openModal}
             className="flex justify-center items-center gap-2 bg-violet-600 p-3 rounded-xl cursor-pointer"
           >
             Explore now <FaArrowRight />
@@ -45,7 +33,6 @@ const Home = () => {
           </button>
         </div>
       </div>
-      <Modal isOpen={isModal} isClose={closeModal} />
     </>
   );
 };
