@@ -97,6 +97,13 @@ const Login = () => {
         <span className="text-gray-500 text-2xl">or</span>
         <hr className="w-full border-t border-gray-400" />
       </div>
+
+      <div className="w-full justify-center flex items-center">
+        <button className="text-black flex justify-around p-3 gap-4 rounded-md shadow-md items-center cursor-pointer">Sign in With Google <FcGoogle className="h-6 w-6"/></button>
+      </div>
+      <div className="underline text-blue-500 mt-4 cursor-pointer">
+        Register Now
+      </div>
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import { FaArrowRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -23,14 +24,14 @@ const Home = () => {
           </p>
         </div>
         <div className="flex justify-between items-center text-white w-64">
-          <button
+          <Link to='/products'
             className="flex justify-center items-center gap-2 bg-violet-600 p-3 rounded-xl cursor-pointer"
           >
             Explore now <FaArrowRight />
-          </button>
-          <button className="flex justify-center gap-2 cursor-pointer items-center">
+          </Link>
+          <Link to='/about' className="flex justify-center gap-2 cursor-pointer items-center">
             Learn more <FaArrowRight />
-          </button>
+          </Link>
         </div>
       </div>
     </>
