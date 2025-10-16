@@ -2,7 +2,11 @@ import { useState } from "react";
 import { BsEyeSlash, BsEye } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 
-const Login = () => {
+interface LoginProps {
+  onRegisterClick: () => void;
+}
+
+const Login:React.FC<LoginProps> = ({ onRegisterClick }) => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -39,7 +43,7 @@ const Login = () => {
     <div className="p-3 flex justify-center items-center flex-col">
       <h2 className="text-gray-400 text-4xl font-bold mb-4">Join us today</h2>
       <p className="text-gray-400 text-lg font-bold mb-8">
-        Enter your email and password to register
+        Enter your email and password to login
       </p>
       <form onSubmit={handleSubmit} className="mt-3 w-3/4 mb-6">
         <div>
@@ -101,7 +105,7 @@ const Login = () => {
       <div className="w-full justify-center flex items-center">
         <button className="text-black flex justify-around p-3 gap-4 rounded-md shadow-md items-center cursor-pointer">Sign in With Google <FcGoogle className="h-6 w-6"/></button>
       </div>
-      <div className="underline text-blue-500 mt-4 cursor-pointer">
+      <div onClick={onRegisterClick} className="underline text-blue-500 mt-4 cursor-pointer">
         Register Now
       </div>
     </div>

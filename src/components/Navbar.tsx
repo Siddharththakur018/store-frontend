@@ -41,7 +41,7 @@ const Navbar = () => {
         </div>
 
         <Modal isOpen={isOpen} isClose={closeModal}>
-          {view === "login" ? <Login /> : <Register />}
+          {view === "login" ? <Login  onRegisterClick={() => setView("register")}/> : <Register onLoginClick={() => setView("login")}/>}
         </Modal>
       </div>
     </>
